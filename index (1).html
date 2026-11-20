@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Document Tracking – DA-PRDP RPCO 13</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header class="top">
+  <div><h1>Document Tracking</h1><p>Travel orders, office orders and communication letters</p></div>
+  <div class="actions">
+    <button id="new" class="primary">New document</button>
+    <button id="csv">Export CSV</button>
+    <button id="bak">Backup</button>
+    <label class="btn">Restore<input type="file" id="rst" accept=".json" hidden></label>
+  </div>
+</header>
+<main>
+  <section class="stats" id="stats"></section>
+  <section class="bar">
+    <input id="q" type="search" placeholder="Search number, subject, name or office" aria-label="Search">
+    <select id="ft" aria-label="Filter by type"></select>
+    <select id="fs" aria-label="Filter by status"></select>
+  </section>
+  <div class="wrap">
+    <table>
+      <thead><tr><th>Number</th><th>Subject</th><th>From / To</th><th>Date</th><th>Due</th><th>Held by</th><th>Status</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="empty" hidden>No documents yet. Select “New document” to log the first one.</p>
+  </div>
+</main>
+<dialog id="dlg"></dialog>
+<div id="slip"></div>
+<div id="toast" role="status"></div>
+<script src="js/app.js"></script>
+</body>
+</html>
